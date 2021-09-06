@@ -1,0 +1,21 @@
+{% extends 'accounts/main.html' %}
+{% block title %}
+    <title>Create Customer |-Manager</title>
+{% endblock title %}
+
+{% block content %}
+ 
+<div class="container">
+    
+<form class="form-inline" action="" method="POST">
+    {% csrf_token %}
+    <div class="group-form">
+        {{form.as_p}}
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+
+</div>
+</form>
+
+
+{% endblock content %}

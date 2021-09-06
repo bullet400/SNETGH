@@ -1,0 +1,38 @@
+{% extends 'accounts/dashboard.html' %}
+
+{% block content %}
+        <div class="row">
+        <div class="col-md">
+            <div class="card card-body">
+            <h1>Products: {{total_products}}</h1>
+            </div>
+                <div class="card card-body">
+                <table class="table table-sm">
+                    <tr>
+                        <th></th>
+                        <th>Num:</th>
+                        <th>Product</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Tag </th>
+                        <th>date_created</th>
+                    </tr>
+                    {% for product in products %}
+                        <tr>
+                            <td></td>
+                            <td> {{product.id}} </td>
+                            <td> {{product.product_name}}</td>
+                            <td> {{product.category}} </td>
+                            <td> {{product.price|floatformat:"2"}} </td>
+                            <td> {{product.tag}}
+                            <td>{{product.date_created}}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+        </div>
+        </div>
+        </div>
+
+
+
+{% endblock content %}

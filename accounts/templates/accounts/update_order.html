@@ -1,0 +1,23 @@
+{% extends 'accounts/main.html' %}
+{% block title %}
+    <title>Update Order </title>
+{% endblock title %}
+
+{% block content %}
+
+<form method='POST'>
+    {% csrf_token %}
+    <div class="form-group">
+    <label class="control-label col-md">Customer:</label>
+    <input type="txt" name="name" placeholder="custer name" class="form-control" value="{{order.id}}">{{customer.id}}
+
+
+
+    </div>
+    {{form}}
+    <button type='submit' value='submit'>Save</button>
+
+</form>
+
+
+{% endblock content %}

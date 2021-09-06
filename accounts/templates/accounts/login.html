@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        {% block title %}
+            <title>register|-Manager</title>
+        {% endblock title %}
+
+<title>Bootstrap 4 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+ {% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+    
+<h3>Welcome. Please register Here</h3>
+ <div class="jumbotron col-lg-6" align="center">
+    {% if messages %}
+        {% for message in messages %}
+        <p class="alert alert-success">{{message}}</p>
+        {% endfor %}
+    {% endif %}
+
+<form method="POST" action=""> 
+    {% csrf_token %}
+    <div class="row">
+        <div class="row">
+            <div class="form-group">
+             <div class="col">
+             <label for="email" class="control-label">Username:*</label>
+             <input type="txt" placeholder="Email" class="form-control" name="username"> </div>
+             </div>
+               <div class="form-group">
+             <div class="col">
+             <label for="password" class="control-label">Password:*</label>
+             <input type="password" name="password" placeholder="password" class="form-control" > </div>
+             </div>
+            
+
+        
+        <div class="col-sm-6"> 
+        <button class="btn btn-outline btn-sm btn-block btn-primary col-sm-6" name="submit">login</button>
+        <h6>Not registered?</h6><a href="{% url 'register' %}">SignUp</a>
+        </div>
+
+
+
+</form>
+</div>
+</div>
+
+{% endblock content %}
